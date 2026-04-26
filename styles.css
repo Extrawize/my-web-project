@@ -1,0 +1,251 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+body.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+.dark-theme .header {
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+.dark-theme .block {
+  background-color: #242424;
+  border: 1px solid #333;
+}
+.dark-theme h1,
+.dark-theme h2 {
+  color: #90caf9; /* Блакитний акцент */
+}
+.dark-theme .theme-btn {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+.dark-theme .theme-btn:hover {
+  background-color: #555;
+}
+
+/* =======================================
+   СВІТЛА ТЕМА (Денна)
+   ======================================= */
+body.light-theme {
+  background-color: #f5f5f5;
+  color: #222;
+}
+.light-theme .header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+}
+.light-theme .block {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.light-theme h1,
+.light-theme h2 {
+  color: #1976d2; /* Темно-синій акцент */
+}
+.light-theme .theme-btn {
+  background-color: #e0e0e0;
+  color: #000;
+}
+.light-theme .theme-btn:hover {
+  background-color: #ccc;
+}
+
+/* --- Шапка --- */
+.header {
+  padding: 20px 0;
+  margin-bottom: 30px;
+  transition: background-color 0.3s;
+}
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+.theme-btn {
+  position: absolute;
+  right: 20px;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+/* --- Блоки контенту --- */
+.block {
+  padding: 20px 25px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  transition:
+    background-color 0.3s,
+    border 0.3s;
+}
+.block h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+.block p {
+  margin: 0;
+}
+.block ul {
+  padding-left: 20px;
+  margin: 0;
+}
+.block li {
+  margin-bottom: 8px;
+}
+
+/* --- Відгуки (API) --- */
+.comments-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.comments-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #444;
+}
+.light-theme .comments-list li {
+  border-bottom: 1px solid #eee;
+}
+.comments-list li:last-child {
+  border-bottom: none;
+}
+.comment-email {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+.dark-theme .comment-email {
+  color: #90caf9;
+}
+.light-theme .comment-email {
+  color: #1976d2;
+}
+
+/* --- Дані з localStorage --- */
+.ls-output {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* --- Модальне вікно --- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.modal-content {
+  background-color: #2c2c2c;
+  margin: 10vh auto;
+  width: 90%;
+  max-width: 450px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+.light-theme .modal-content {
+  background-color: #fff;
+}
+
+.modal-header {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+}
+.light-theme .modal-header {
+  border-bottom: 1px solid #ddd;
+}
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+.light-theme .modal-header h2 {
+  color: #000;
+}
+
+.close-btn {
+  color: #aaa;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close-btn:hover {
+  color: #fff;
+}
+.light-theme .close-btn:hover {
+  color: #000;
+}
+
+.modal-body {
+  padding: 20px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1976d2;
+}
+.submit-btn {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.submit-btn:hover {
+  background-color: #e0e0e0;
+}

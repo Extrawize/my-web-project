@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Резюме - Гарасим Любомир</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="dark-theme">
+    <header class="header">
+      <div class="container header-container">
+        <h1>Гарасим Любомир</h1>
+        <button id="theme-toggle" class="theme-btn">Змінити тему</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="block">
+        <h2>Про себе</h2>
+        <p>
+          Я студент "НУЛП", навчаюсь у групі КБ-208, Інститут ІКТА.
+          Спеціалізуюсь на Frontend розробці та роботі з SQL базами даних.
+          Активно вивчаю кібербезпеку.
+        </p>
+      </section>
+
+      <section class="block">
+        <h2>Технічні навички</h2>
+        <ul>
+          <li><strong>Мови розмітки та стилізації:</strong> HTML5, CSS3</li>
+          <li><strong>Мови програмування:</strong> JavaScript</li>
+          <li><strong>Бази даних:</strong> SQL, MySQL</li>
+          <li>
+            <strong>Інше:</strong> Розуміння архітектури мереж та основ
+            кібербезпеки
+          </li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <h2>Хобі та інтереси</h2>
+        <ul>
+          <li>
+            <strong>Спорт:</strong> Жим штанги (70 кг), жим гантелей (25 кг на
+            руку)
+          </li>
+          <li><strong>Кіберспорт:</strong> CS:GO (Faceit 10 LVL)</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <h2>Відгуки (API)</h2>
+        <ul id="comments-list" class="comments-list"></ul>
+      </section>
+
+      <section class="block">
+        <h2>Дані з localStorage</h2>
+        <div id="ls-data" class="ls-output"></div>
+      </section>
+    </main>
+
+    <div id="feedback-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Форма зворотного зв'язку</h2>
+          <span class="close-btn">&times;</span>
+        </div>
+        <div class="modal-body">
+          <form action="https://formspree.io/f/mojpyvay" method="POST">
+            <input type="text" name="name" placeholder="Ім'я" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="tel" name="phone" placeholder="Номер телефону" />
+            <textarea
+              name="message"
+              rows="4"
+              placeholder="Повідомлення"
+              required
+            ></textarea>
+            <button type="submit" class="submit-btn">Відправити</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
